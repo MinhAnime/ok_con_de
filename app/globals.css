@@ -1,26 +1,99 @@
-@import "tailwindcss";
+/* src/app/globals.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'); /* Thêm Font Awesome */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Màu sắc chính */
+  --primary-color: #007bff; /* Xanh dương */
+  --secondary-color: #6c757d; /* Xám */
+  --accent-color: #17a2b8; /* Xanh lam nhạt */
+  --background-light: #f8f9fa; /* Nền sáng */
+  --background-dark: #343a40; /* Nền tối */
+  --text-dark: #212529; /* Chữ tối */
+  --text-light: #f8f9fa; /* Chữ sáng */
+  --border-color: #e9ecef; /* Màu viền */
+  --card-background: #ffffff; /* Nền card */
+
+  /* Font chữ */
+  --font-heading: var(--font-raleway); /* Raleway cho tiêu đề */
+  --font-body: var(--font-inter); /* Inter cho nội dung chính */
+  --font-alt: var(--font-montserrat); /* Montserrat cho nhấn mạnh */
+
+  /* Kích thước font cơ bản */
+  font-size: 16px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Reset và cài đặt chung */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body); /* Sử dụng biến font */
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Lớp tiện ích cho các Section */
+.section {
+  padding: 6rem 2rem; /* Tăng padding */
+  max-width: 1024px; /* Rộng hơn một chút */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Xen kẽ màu nền cho các section */
+.section:nth-of-type(even) { /* Đổi odd thành even để background-light luôn là nền chính */
+  background-color: var(--background-light);
+}
+.section:nth-of-type(odd) {
+  background-color: #f1f3f5; /* Một màu xám nhạt khác để tạo sự phân biệt tinh tế */
+}
+
+
+/* Tiêu đề chung cho các section */
+.section-title {
+  font-family: var(--font-heading);
+  text-align: center;
+  font-size: 2.8rem; /* Kích thước lớn hơn */
+  font-weight: 700; /* Đậm hơn */
+  margin-bottom: 4rem; /* Khoảng cách lớn hơn */
+  text-transform: uppercase;
+  color: var(--text-dark);
+  position: relative;
+  display: inline-block; /* Để đường gạch chân chỉ rộng bằng chữ */
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px; /* Độ dài đường gạch chân */
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
 }

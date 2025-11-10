@@ -1,0 +1,131 @@
+/* src/components/Projects.module.css */
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Khoảng cách lớn hơn */
+}
+
+.projectCard {
+  background-color: var(--card-background);
+  border: none; /* Bỏ viền */
+  border-radius: 12px; /* Bo góc nhiều hơn */
+  padding: 2.5rem; /* Padding lớn hơn */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Đổ bóng nổi bật hơn */
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.projectCard:hover::before {
+    transform: translateY(0);
+}
+
+.projectCard:hover {
+  transform: translateY(-8px); /* Nhấc lên nhiều hơn */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.projectTitle {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.projectDate {
+  font-family: var(--font-alt);
+  font-style: normal;
+  color: var(--secondary-color);
+  font-size: 1rem;
+  padding-top: 5px;
+  white-space: nowrap; /* Không xuống dòng */
+}
+
+.projectRole {
+  font-family: var(--font-alt);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 1.8rem;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem; /* Khoảng cách lớn hơn */
+  margin-bottom: 2rem;
+}
+
+.techTag {
+  background-color: #e0eafc; /* Màu xanh nhạt */
+  color: #0056b3; /* Màu xanh đậm */
+  padding: 0.4rem 1rem; /* Padding lớn hơn */
+  border-radius: 20px; /* Bo góc nhiều hơn */
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.descriptionList {
+  padding-left: 0; /* Bỏ padding mặc định */
+  list-style: none; /* Bỏ bullet mặc định */
+  color: var(--text-dark);
+}
+
+.descriptionList li {
+  margin-bottom: 0.8rem;
+  line-height: 1.8;
+  display: flex; /* Để icon và text cùng hàng */
+  align-items: flex-start;
+  font-size: 1.05rem;
+}
+.bulletIcon {
+  color: var(--primary-color);
+  margin-right: 10px;
+  font-size: 0.9em;
+  padding-top: 5px; /* Căn icon */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projectCard {
+    padding: 1.5rem;
+  }
+  .projectTitle {
+    font-size: 1.5rem;
+  }
+  .projectDate {
+    font-size: 0.85rem;
+  }
+  .projectRole {
+    font-size: 1rem;
+  }
+  .techTag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+  .descriptionList li {
+    font-size: 1rem;
+  }
+}

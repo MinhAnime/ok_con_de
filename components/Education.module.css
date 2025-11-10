@@ -1,0 +1,28 @@
+/* src/components/Education.module.css */
+.educationEntry {
+  text-align: center;
+  background: #fff;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.educationEntry h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.educationEntry p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.educationEntry .date {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 1rem;
+}

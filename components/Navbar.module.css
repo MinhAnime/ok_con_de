@@ -1,0 +1,94 @@
+/* src/components/Navbar.module.css */
+.navbar {
+  width: 100%;
+  padding: 1.2rem 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: var(--card-background);
+  padding: 0.8rem 3rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.logo span {
+  display: inline-block;
+  margin-right: 2px;
+  color: var(--text-dark); /* Để chỉ các chữ cái đầu có màu khác */
+  transition: color 0.3s ease;
+}
+.scrolled .logo span {
+    color: var(--primary-color);
+}
+.scrolled .logo {
+  color: var(--text-dark);
+}
+
+
+.navLinks {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navLinks a {
+  font-family: var(--font-alt);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 5px; /* Để có chỗ cho gạch chân */
+}
+.navLinks a:hover {
+    color: var(--primary-color);
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  .navbar.scrolled {
+    padding: 0.8rem 1.5rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .navLinks {
+    display: none; /* Ẩn navigation trên mobile, sẽ cần thêm toggle button nếu muốn hiển thị */
+  }
+}

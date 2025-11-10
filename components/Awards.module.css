@@ -1,0 +1,49 @@
+/* src/components/Awards.module.css */
+.awardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.awardCard {
+  text-align: center;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  position: relative;
+}
+
+.awardCard h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.awardCard p {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+}
+
+.awardCard .date {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .awardCard {
+    padding-top: 3rem;
+  }
+  .awardCard .date {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
