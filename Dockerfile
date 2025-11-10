@@ -17,7 +17,7 @@ RUN npm run build
 # ---
 
 # Giai đoạn 2: Tạo image chạy production
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 
 WORKDIR /app
 
