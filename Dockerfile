@@ -1,5 +1,5 @@
 # Giai đoạn 1: Build ứng dụng
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 # Đặt biến môi trường
 ENV NODE_ENV=production
